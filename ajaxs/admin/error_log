@@ -1,0 +1,6 @@
+[11-Jul-2025 14:35:49 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: image in /home/dichvuc1/client.khangapi.com/ajaxs/admin/remove.php on line 556
+[11-Jul-2025 14:35:49 Asia/Ho_Chi_Minh] PHP Warning:  unlink(../../): Is a directory in /home/dichvuc1/client.khangapi.com/ajaxs/admin/remove.php on line 556
+[11-Jul-2025 14:35:54 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: image in /home/dichvuc1/client.khangapi.com/ajaxs/admin/remove.php on line 556
+[11-Jul-2025 14:35:54 Asia/Ho_Chi_Minh] PHP Warning:  unlink(../../): Is a directory in /home/dichvuc1/client.khangapi.com/ajaxs/admin/remove.php on line 556
+[11-Jul-2025 14:35:59 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: image in /home/dichvuc1/client.khangapi.com/ajaxs/admin/remove.php on line 556
+[11-Jul-2025 14:35:59 Asia/Ho_Chi_Minh] PHP Warning:  unlink(../../): Is a directory in /home/dichvuc1/client.khangapi.com/ajaxs/admin/remove.php on line 556

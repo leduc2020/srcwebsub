@@ -1,0 +1,1055 @@
+/* Đảm bảo select2 có chiều cao như input form-control */
+.select2-container--default .select2-selection--single {
+    height: 38px !important; /* chiều cao cho form-control tiêu chuẩn */
+    padding: 4px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 24px !important;
+    font-size: 14px;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 38px !important;
+    right: 6px;
+}
+
+/* Style cho dropdown menu Select2 */
+.select2-dropdown {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.select2-search--dropdown {
+    padding: 8px;
+}
+.select2-search--dropdown .select2-search__field {
+    padding: 6px;
+    border-radius: 4px;
+}
+.select2-results__option {
+    padding: 0 8px !important;
+    margin: 0 !important;
+    color: #333 !important; /* Make text darker for better visibility */
+}
+.select2-results__option--highlighted[aria-selected] {
+    background-color: #f8f9fa !important;
+    color: #333 !important;
+}
+
+/* Thêm CSS cho loader */
+.form-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    border-radius: 0.375rem;
+}
+
+/* Dark mode support cho loader */
+[data-bs-theme="dark"] .form-loader {
+    background: rgba(33, 37, 41, 0.95);
+}
+
+.form-loader .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--bs-primary);
+}
+
+.form-loader .loading-text {
+    margin-top: 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--bs-body-color);
+    text-align: center;
+}
+
+/* Đảm bảo text hiển thị rõ trong cả light và dark mode */
+[data-bs-theme="dark"] .form-loader .loading-text {
+    color: #fff;
+}
+
+[data-bs-theme="light"] .form-loader .loading-text {
+    color: #333;
+}
+
+.form-container {
+    position: relative;
+}
+
+/* Custom giao diện cho quick-search-service */
+.quick-service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 8px;
+    font-size: 15px;
+}
+.quick-service-item .service-id {
+    color: #007bff;
+    font-weight: bold;
+    margin-right: 8px;
+    min-width: 60px;
+    display: inline-block;
+}
+.quick-service-item .service-name {
+    flex: 1;
+    color: #222;
+    font-weight: 500;
+}
+.quick-service-item .service-badges {
+    margin-left: 8px;
+}
+.quick-service-item .service-price {
+    color: #e53935;
+    font-weight: bold;
+    margin-left: 12px;
+    min-width: 40px;
+    text-align: right;
+    display: inline-block;
+}
+.select2-results__option--highlighted[aria-selected] .quick-service-item {
+    background: #f0f8ff;
+}
+
+/* CSS cho multi-order modal */
+.multi-orders-list {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    background: white;
+}
+
+.multi-order-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+}
+
+.multi-order-item:last-child {
+    border-bottom: none;
+}
+
+.multi-order-item.processing {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+.multi-order-item.success {
+    background-color: #d1e7dd;
+    border-left: 4px solid #198754;
+}
+
+.multi-order-item.error {
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+}
+
+.multi-order-item.waiting {
+    background-color: #f8f9fa;
+    border-left: 4px solid #6c757d;
+}
+
+.multi-order-link {
+    font-weight: 500;
+    color: #495057;
+    text-decoration: none;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.multi-order-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.waiting {
+    background-color: #e9ecef;
+    color: #6c757d;
+}
+
+.status-badge.processing {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.status-badge.success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-badge.error {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.order-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.multi-order-controls {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 15px;
+    border-top: 1px solid #dee2e6;
+    margin: -15px -15px 0 -15px;
+}
+
+[data-bs-theme="dark"] .multi-orders-list {
+    background: #2b3035;
+    border-color: #495057;
+}
+
+[data-bs-theme="dark"] .multi-order-item {
+    border-bottom-color: #495057;
+}
+
+[data-bs-theme="dark"] .multi-order-item.waiting {
+    background-color: #343a40;
+}
+
+[data-bs-theme="dark"] .multi-order-controls {
+    background: #2b3035;
+    border-top-color: #495057;
+}
+
+/* Styling cho multi-order pricing section */
+.bg-gradient-light {
+    background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+}
+
+[data-bs-theme="dark"] .bg-gradient-light {
+    background: linear-gradient(135deg, #2b3035 0%, #343a40 100%);
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.multi-price-animation {
+    transition: all 0.3s ease;
+    animation: priceUpdate 0.5s ease-in-out;
+}
+
+@keyframes priceUpdate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.price-highlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.price-highlight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.price-highlight.animate::before {
+    left: 100%;
+}
+
+/* Enhanced badge styling */
+.badge.fs-6 {
+    font-size: 0.9rem !important;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Enhanced card styling */
+.card.border-0.shadow-sm {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.card.border-0.shadow-sm:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1) !important;
+    transform: translateY(-1px);
+}
+
+/* Enhanced inner pricing card */
+.border.rounded-3.p-3.bg-white.shadow-sm {
+    border: 1px solid rgba(79, 70, 229, 0.1) !important;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.05) !important;
+    transition: all 0.2s ease;
+}
+
+.border.rounded-3.p-3.bg-white.shadow-sm:hover {
+    border-color: rgba(79, 70, 229, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* Dark mode adjustments */
+[data-bs-theme="dark"] .border.rounded-3.p-3.bg-white.shadow-sm {
+    background-color: #2b3035 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-bs-theme="dark"] .bg-light.bg-opacity-50 {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Select2 Dark Mode Styles */
+[data-bs-theme="dark"] .select2-container--default .select2-selection--single {
+    background-color: #2b3035 !important;
+    border: 1px solid #495057 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-container .select2-selection--single .select2-selection__rendered {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-selection__rendered {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #adb5bd transparent transparent transparent !important;
+}
+
+[data-bs-theme="dark"] .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #adb5bd transparent !important;
+}
+
+/* Select2 Dropdown Dark Mode */
+[data-bs-theme="dark"] .select2-dropdown {
+    background-color: #2b3035 !important;
+    border: 1px solid #495057 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+}
+
+[data-bs-theme="dark"] .select2-search--dropdown {
+    background-color: #2b3035 !important;
+}
+
+[data-bs-theme="dark"] .select2-search--dropdown .select2-search__field {
+    background-color: #343a40 !important;
+    border: 1px solid #495057 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-search--dropdown .select2-search__field::placeholder {
+    color: #adb5bd !important;
+}
+
+/* Select2 Results Dark Mode */
+[data-bs-theme="dark"] .select2-results {
+    background-color: #2b3035 !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option {
+    background-color: #2b3035 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option--highlighted[aria-selected] {
+    background-color: #495057 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option[aria-selected="true"] {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Fix cho tất cả elements trong dropdown results */
+[data-bs-theme="dark"] .select2-results__option,
+[data-bs-theme="dark"] .select2-results__option * {
+    background-color: #2b3035 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option--highlighted,
+[data-bs-theme="dark"] .select2-results__option--highlighted * {
+    background-color: #495057 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option[aria-selected="true"],
+[data-bs-theme="dark"] .select2-results__option[aria-selected="true"] * {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Override cho quick-service-item trong dropdown */
+[data-bs-theme="dark"] .select2-results__option .quick-service-item {
+    background-color: transparent !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option--highlighted .quick-service-item {
+    background-color: transparent !important;
+}
+
+/* Select2 Focus và Disabled States Dark Mode */
+[data-bs-theme="dark"] .select2-container--default.select2-container--focus .select2-selection--single {
+    border-color: #86b7fe !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
+
+[data-bs-theme="dark"] .select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: #343a40 !important;
+    color: #6c757d !important;
+    border-color: #495057 !important;
+}
+
+/* Select2 Quick Service Item Dark Mode */
+[data-bs-theme="dark"] .quick-service-item .service-id {
+    color: #86b7fe !important;
+}
+
+[data-bs-theme="dark"] .quick-service-item .service-name {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .quick-service-item .service-price {
+    color: #ff6b6b !important;
+}
+
+[data-bs-theme="dark"] .select2-results__option--highlighted[aria-selected] .quick-service-item {
+    background: transparent !important;
+}
+
+/* Đảm bảo service item colors trong dropdown */
+[data-bs-theme="dark"] .select2-results .quick-service-item .service-id {
+    color: #86b7fe !important;
+}
+
+[data-bs-theme="dark"] .select2-results .quick-service-item .service-name {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-results .quick-service-item .service-price {
+    color: #ff6b6b !important;
+}
+
+/* Override mọi text color trong dropdown */
+[data-bs-theme="dark"] .select2-dropdown .select2-results__option {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-dropdown .select2-results__option * {
+    color: inherit !important;
+}
+
+/* Select2 No Results Dark Mode */
+[data-bs-theme="dark"] .select2-results__message {
+    color: #adb5bd !important;
+}
+
+/* Select2 Loading Dark Mode */
+[data-bs-theme="dark"] .select2-results__option[role="group"] {
+    color: #adb5bd !important;
+}
+
+/* Select2 Clear Button Dark Mode */
+[data-bs-theme="dark"] .select2-selection__clear {
+    color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .select2-selection__clear:hover {
+    color: #fff !important;
+}
+
+/* Đảm bảo tất cả text trong select2 dark mode đều màu trắng */
+[data-bs-theme="dark"] .select2-container--default .select2-selection--single,
+[data-bs-theme="dark"] .select2-container--default .select2-selection--single *,
+[data-bs-theme="dark"] .select2-selection--single,
+[data-bs-theme="dark"] .select2-selection--single * {
+    color: #fff !important;
+}
+
+/* Riêng cho placeholder text */
+[data-bs-theme="dark"] .select2-selection__placeholder {
+    color: #adb5bd !important;
+}
+
+/* Override mọi CSS có thể ghi đè */
+[data-bs-theme="dark"] span.select2-selection__rendered {
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .select2-container span.select2-selection__rendered {
+    color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+/* ==================== ORDER SYSTEM STYLES ==================== */
+
+/* Service Option Styles */
+.service-option-image {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.service-option-container {
+    /* padding: 6px 12px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-option-content {
+    flex-grow: 1;
+}
+
+.service-option-id {
+    font-weight: bold;
+    color: #0d6efd;
+    margin-right: 8px;
+    font-size: 13px;
+}
+
+.service-option-name {
+    color: #333;
+    font-size: 13px;
+}
+
+.service-option-price {
+    margin-left: 12px;
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* Service Badge Styles */
+.service-badge-cancel {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: 6px;
+    box-shadow: 0 1px 3px rgba(40, 167, 69, 0.3);
+}
+
+.service-badge-cancel.simple {
+    margin-left: 6px;
+    margin-right: 4px;
+}
+
+.service-badge-warranty {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: 4px;
+    box-shadow: 0 1px 3px rgba(0, 123, 255, 0.3);
+}
+
+.service-badge-warranty.simple {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.service-badge-slowmode {
+    background: linear-gradient(45deg, #ff6b35, #ff8c42);
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-left: 4px;
+    box-shadow: 0 1px 3px rgba(255, 107, 53, 0.3);
+}
+
+.service-badge-slowmode.simple {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.service-badge-icon {
+    font-size: 8px;
+    margin-right: 2px;
+}
+
+/* Service Description Card */
+.service-description-card {
+    border: 1px dashed #dee2e6;
+    background-color: #f8f9fa;
+}
+
+/* Processing Warning Overlay */
+.processing-warning {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    min-width: 300px;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #ffc107 !important;
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* Modal Loading Overlay */
+.modal-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.modal-loading-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    margin: 20px;
+}
+
+.modal-loading-spinner {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Quick Service Item */
+.quick-service-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quick-service-item .service-id {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.quick-service-item .service-name {
+    flex: 1;
+    color: #333;
+}
+
+.quick-service-item .service-price {
+    font-weight: bold;
+    color: #dc3545;
+    white-space: nowrap;
+}
+
+/* Multi Order Item */
+.multi-order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.multi-order-item.waiting {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+.multi-order-item.processing {
+    background: #fff3cd;
+    border-color: #ffc107;
+    animation: pulse 1.5s infinite;
+}
+
+.multi-order-item.success {
+    background: #d1e7dd;
+    border-color: #28a745;
+}
+
+.multi-order-item.error {
+    background: #f8d7da;
+    border-color: #dc3545;
+}
+
+.multi-order-link {
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 80px;
+}
+
+.status-badge.waiting {
+    background: #e9ecef;
+    color: #6c757d;
+}
+
+.status-badge.processing {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-badge.success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-badge.error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+/* Order Spinner Animation */
+.order-spinner {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #856404;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 4px;
+}
+
+/* Animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dark Mode Support */
+[data-bs-theme="dark"] .service-option-name {
+    color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .service-description-card {
+    border-color: #495057;
+    background-color: #343a40;
+}
+
+[data-bs-theme="dark"] .modal-loading-content {
+    background: #343a40;
+    color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .processing-warning {
+    background: #343a40;
+    border-left-color: #ffc107 !important;
+}
+
+[data-bs-theme="dark"] .quick-service-item .service-name {
+    color: #f8f9fa;
+}
+
+[data-bs-theme="dark"] .multi-order-item {
+    border-color: #495057;
+}
+
+[data-bs-theme="dark"] .multi-order-item.waiting {
+    background: #343a40;
+    border-color: #495057;
+}
+
+[data-bs-theme="dark"] .multi-order-item.processing {
+    background: #3d3629;
+    border-color: #664d03;
+}
+
+[data-bs-theme="dark"] .multi-order-item.success {
+    background: #262e24;
+    border-color: #155724;
+}
+
+[data-bs-theme="dark"] .multi-order-item.error {
+    background: #3d2426;
+    border-color: #721c24;
+}
+
+[data-bs-theme="dark"] .status-badge.waiting {
+    background: #495057;
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .status-badge.processing {
+    background: #3d3629;
+    color: #ffda6a;
+}
+
+[data-bs-theme="dark"] .status-badge.success {
+    background: #262e24;
+    color: #75b798;
+}
+
+[data-bs-theme="dark"] .status-badge.error {
+    background: #3d2426;
+    color: #ea868f;
+}
+
+/* Service Loading Progress Styles */
+#service-loading-progress {
+    background: rgba(13, 110, 253, 0.05);
+    border: 1px solid rgba(13, 110, 253, 0.15);
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+#service-loading-progress .progress {
+    background-color: rgba(13, 110, 253, 0.1);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+#service-loading-progress .progress-bar {
+    background: linear-gradient(90deg, #0d6efd, #198754);
+    transition: width 0.3s ease;
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#service-loading-progress .progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Lazy Loading Indicators */
+.service-loading-placeholder {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(108, 117, 125, 0.05);
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-loading-placeholder::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #dee2e6;
+    border-top: 2px solid #0d6efd;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+.service-loading-placeholder::after {
+    content: 'Đang tải dịch vụ...';
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Service Dropdown Optimizations */
+#service option:disabled {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+/* Loading States */
+.form-loader {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+}
+
+/* Cache Status Indicator */
+.cache-status {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background: rgba(25, 135, 84, 0.1);
+    color: #198754;
+    border: 1px solid rgba(25, 135, 84, 0.2);
+}
+
+.cache-status.loading {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+    border-color: rgba(255, 193, 7, 0.2);
+}
+
+.cache-status.error {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border-color: rgba(220, 53, 69, 0.2);
+}
+
+/* Service Count Badge */
+.service-count-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    background: linear-gradient(135deg, #0d6efd, #198754);
+    color: white;
+    margin-left: 0.5rem;
+}
+
+/* Performance Optimizations */
+.select2-results__option--disabled {
+    display: none !important;
+}
+
+.select2-dropdown {
+    border: 1px solid rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.15);
+}
+
+.select2-results__option--highlighted {
+    background-color: rgba(13, 110, 253, 0.1) !important;
+    color: #0d6efd !important;
+}
+
+/* Chunk Loading Animation */
+.chunk-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.chunk-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.1), transparent);
+    animation: slideIn 1s infinite;
+}
+
+@keyframes slideIn {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

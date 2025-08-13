@@ -1,0 +1,800 @@
+/* Icon Card - Icon container cho card với kích thước 35x35px */
+.icon-card{
+    padding: .25rem;
+    background-color: #ffffff;
+    border: var(--vz-border-width) solid #ffffff;
+    border-radius: var(--vz-border-radius);
+    width: 35px; 
+    height: 35px;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Icon Sidebar - Icon container cho sidebar với kích thước 32x32px */
+.icon-sidebar{
+    padding: .25rem;
+    background-color: #ffffff;
+    border: var(--vz-border-width) solid #ffffff;
+    border-radius: var(--vz-border-radius);
+    width: 32px; 
+    height: 32px;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Conversion Box - Container có hiệu ứng hover với border xanh */
+.conversion-box {
+    transition: all 0.3s ease;
+}
+.conversion-box:hover {
+    border-color: #0d6efd !important;
+}
+
+/* No Pointer Events - Vô hiệu hóa tương tác và selection cho elements */
+.no-pointer-events {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.navbar-brand-box {
+    background-color: transparent !important;
+}
+
+
+
+/* Payment Gateway Modal Styles */
+.pg-modal-content {
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.pg-modal-header {
+    background: var(--vz-primary);
+    color: white;
+    padding: 24px 28px;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pg-header-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pg-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.pg-header-text {
+    flex: 1;
+}
+
+.pg-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+}
+
+.pg-subtitle {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.3;
+}
+
+.pg-modal-body {
+    padding: 28px;
+    background: #fafbfc;
+}
+
+/* Loader Styles */
+.pg-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.pg-loader-content {
+    text-align: center;
+}
+
+.pg-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+    position: relative;
+}
+
+.pg-spinner-inner {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #e9ecef;
+    border-top: 3px solid var(--vz-primary);
+    border-radius: 50%;
+    animation: pg-spin 1s linear infinite;
+}
+
+@keyframes pg-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.pg-loader-text {
+    color: #6c757d;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Gateways Grid */
+.pg-gateways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.pg-gateway-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 0.25rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pg-gateway-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--vz-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.pg-gateway-card:hover {
+    border-color: var(--vz-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(var(--vz-primary-rgb), 0.15);
+}
+
+.pg-gateway-card:hover::before {
+    transform: scaleX(1);
+}
+
+.pg-gateway-card:active {
+    transform: translateY(0);
+}
+
+.pg-gateway-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pg-gateway-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.pg-gateway-icon::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    opacity: 0;
+}
+
+.pg-gateway-card:hover .pg-gateway-icon::after {
+    animation: pg-shine 0.6s ease-in-out;
+}
+
+@keyframes pg-shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.pg-gateway-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.pg-gateway-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.pg-gateway-desc {
+    font-size: 13px;
+    color: #718096;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.pg-gateway-arrow {
+    color: #a0aec0;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.pg-gateway-card:hover .pg-gateway-arrow {
+    color: var(--vz-primary);
+    transform: translateX(4px);
+}
+
+/* Error State */
+.pg-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.pg-error-content {
+    text-align: center;
+    max-width: 300px;
+}
+
+.pg-error-icon {
+    width: 64px;
+    height: 64px;
+    background: #fed7d7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 28px;
+    color: #e53e3e;
+}
+
+.pg-error-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 8px 0;
+}
+
+.pg-error-text {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Empty State */
+.pg-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.pg-empty-content {
+    text-align: center;
+    max-width: 320px;
+}
+
+.pg-empty-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    color: #718096;
+}
+
+.pg-empty-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 8px 0;
+}
+
+.pg-empty-text {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pg-modal-header {
+        padding: 20px;
+    }
+    
+    .pg-modal-body {
+        padding: 20px;
+    }
+    
+    .pg-gateways-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .pg-gateway-card {
+        padding: 16px;
+    }
+    
+    .pg-gateway-content {
+        gap: 12px;
+    }
+    
+    .pg-gateway-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+    
+    .pg-title {
+        font-size: 18px;
+    }
+    
+    .pg-subtitle {
+        font-size: 13px;
+    }
+}
+
+
+.nav-item .menu-link.active {
+    color: #1e40af;
+    background-color: rgba(59, 130, 246, 0.08);
+    border-radius: 6px;
+    position: relative;
+    border-left: 3px solid #3b82f6;
+}
+
+/* =================================================================== */
+/* NAVBAR MENU STYLES - Dynamic colors from theme settings */
+/* =================================================================== */
+
+.text-primary {
+    color: var(--vz-primary) !important;
+}
+
+.navbar-menu {
+    background-color: var(--vz-vertical-menu-bg);
+    border-right: 1px solid var(--vz-vertical-menu-border);
+}
+
+.navbar-brand-box {
+    background-color: var(--vz-vertical-menu-bg);
+}
+
+.navbar-menu .navbar-nav .nav-link {
+    color: var(--vz-vertical-menu-item-color);
+}
+
+.navbar-menu .navbar-nav .nav-sm .nav-link {
+    color: var(--vz-vertical-menu-sub-item-color);
+}
+
+.menu-title {
+    color: var(--vz-vertical-menu-item-color);
+}
+
+
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: spin 1s linear infinite;
+}
+
+.spinner-border {
+    animation: spin 0.75s linear infinite;
+}
+
+/* =================================================================== */
+/* DARK MODE STYLES */
+/* =================================================================== */
+
+/* Nav Tabs Custom - Tab navigation trong dark mode */
+[data-bs-theme="dark"] .nav-tabs-custom .nav-item .nav-link.active {
+    background-color: #2c3035;
+    border-color: #2c3035;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .nav-tabs-custom .nav-item .nav-link.active:hover,
+[data-bs-theme="dark"] .nav-tabs-custom .nav-item .nav-link.active:focus {
+    background-color: #2c3035;
+    border-color: #2c3035;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .nav-tabs-custom .nav-item .nav-link {
+    background-color: #212529;
+    border-color: #404449;
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .nav-tabs-custom .nav-item .nav-link:hover {
+    background-color: #373c41;
+    border-color: #4a5058;
+    color: #ffffff;
+}
+
+/* Background Primary - Màu nền primary trong dark mode */
+[data-bs-theme="dark"] .bg-primary {
+    background-color: #212529 !important;
+}
+
+[data-bs-theme="dark"] .bg-primary .text-white {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .bg-primary .text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Text Primary - Màu chữ primary trong dark mode thành trắng sáng */
+[data-bs-theme="dark"] .text-primary {
+    color: #ffffff !important;
+}
+
+/* Navbar Menu - Navigation menu trong dark mode */
+[data-bs-theme="dark"] .navbar-menu .nav-link.active {
+    color: #ffffff;
+    background-color: rgba(59, 130, 246, 0.08);
+    border-radius: 6px;
+    position: relative;
+    border-left: 3px solid #3b82f6;
+}
+
+ 
+/* Icon Dual Primary - Icons với màu primary trong dark mode */
+[data-bs-theme="dark"] .icon-dual-primary {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Links - Thẻ a trong dark mode */
+[data-bs-theme="dark"] a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+[data-bs-theme="dark"] a:hover,
+[data-bs-theme="dark"] a:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+[data-bs-theme="dark"] a[type="button"]:hover,
+[data-bs-theme="dark"] a[type="button"]:focus,
+[data-bs-theme="dark"] a.btn:hover,
+[data-bs-theme="dark"] a.btn:focus,
+[data-bs-theme="dark"] a[class*="btn-"]:hover,
+[data-bs-theme="dark"] a[class*="btn-"]:focus {
+    text-decoration: none;
+}
+
+/* Button Primary - Nút primary trong dark mode */
+[data-bs-theme="dark"] .btn-primary {
+    background-color: #2b3035;
+    border-color: #404449;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .btn-primary:hover,
+[data-bs-theme="dark"] .btn-primary:focus {
+    background-color: #373c41;
+    border-color: #495057;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .btn-primary:active,
+[data-bs-theme="dark"] .btn-primary.active {
+    background-color: #404449;
+    border-color: #495057;
+    color: #ffffff;
+}
+
+/* Button Danger - Nút danger trong dark mode */
+[data-bs-theme="dark"] .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .btn-danger:hover,
+[data-bs-theme="dark"] .btn-danger:focus {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .btn-danger:active,
+[data-bs-theme="dark"] .btn-danger.active {
+    background-color: #bd2130;
+    border-color: #b21e2d;
+    color: #ffffff;
+}
+
+/* Text Danger - Chữ màu danger trong dark mode */
+[data-bs-theme="dark"] .text-danger {
+    color: #ff6b6b !important;
+}
+
+/* Badge Warning - Badge màu warning trong dark mode */
+[data-bs-theme="dark"] .badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+/* Badge Primary - Badge màu primary trong dark mode */
+[data-bs-theme="dark"] .badge.bg-primary {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+
+/* Badge Secondary - Badge màu secondary trong dark mode */
+[data-bs-theme="dark"] .badge.bg-secondary {
+    background-color: #6c757d !important;
+    color: #ffffff !important;
+}
+
+/* Badge Success - Badge màu success trong dark mode */
+[data-bs-theme="dark"] .badge.bg-success {
+    background-color: #198754 !important;
+    color: #ffffff !important;
+}
+
+/* Badge Danger - Badge màu danger trong dark mode */
+[data-bs-theme="dark"] .badge.bg-danger {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+}
+
+/* Badge Info - Badge màu info trong dark mode */
+[data-bs-theme="dark"] .badge.bg-info {
+    background-color: #0dcaf0 !important;
+    color: #212529 !important;
+}
+
+/* Badge Light - Badge màu light trong dark mode */
+[data-bs-theme="dark"] .badge.bg-light {
+    background-color: #f8f9fa !important;
+    color: #212529 !important;
+}
+
+/* Badge Dark - Badge màu dark trong dark mode */
+[data-bs-theme="dark"] .badge.bg-dark {
+    background-color: #495057 !important;
+    color: #ffffff !important;
+}
+
+/* Alert Info - Thông báo info trong dark mode */
+[data-bs-theme="dark"] .alert.alert-info {
+    background-color: rgba(13, 202, 240, 0.1);
+    border-color: rgba(13, 202, 240, 0.3);
+    color: #9ec5fe;
+}
+
+/* Alert Primary - Thông báo primary trong dark mode */
+[data-bs-theme="dark"] .alert.alert-primary {
+    background-color: rgba(13, 110, 253, 0.1);
+    border-color: rgba(13, 110, 253, 0.3);
+    color: #6ea8fe;
+}
+
+/* Alert Secondary - Thông báo secondary trong dark mode */
+[data-bs-theme="dark"] .alert.alert-secondary {
+    background-color: rgba(108, 117, 125, 0.1);
+    border-color: rgba(108, 117, 125, 0.3);
+    color: #dee2e6;
+}
+
+/* Alert Success - Thông báo success trong dark mode */
+[data-bs-theme="dark"] .alert.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    border-color: rgba(25, 135, 84, 0.3);
+    color: #75b798;
+}
+
+/* Alert Danger - Thông báo danger trong dark mode */
+[data-bs-theme="dark"] .alert.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: rgba(220, 53, 69, 0.3);
+    color: #f1aeb5;
+}
+
+/* Alert Warning - Thông báo warning trong dark mode */
+[data-bs-theme="dark"] .alert.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-color: rgba(255, 193, 7, 0.3);
+    color: #ffda6a;
+}
+
+/* Alert Light - Thông báo light trong dark mode */
+[data-bs-theme="dark"] .alert.alert-light {
+    background-color: rgba(248, 249, 250, 0.1);
+    border-color: rgba(248, 249, 250, 0.3);
+    color: #f8f9fa;
+}
+
+/* Alert Dark - Thông báo dark trong dark mode */
+[data-bs-theme="dark"] .alert.alert-dark {
+    background-color: rgba(33, 37, 41, 0.2);
+    border-color: rgba(73, 80, 87, 0.4);
+    color: #d1ecf1;
+}
+
+/* =================================================================== */
+/* PAYMENT GATEWAY MODAL DARK MODE STYLES */
+/* =================================================================== */
+
+/* Modal Content - Container chính của modal */
+[data-bs-theme="dark"] .pg-modal-content {
+    background-color: #2b3035;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Header - Header với background primary trong dark mode */
+[data-bs-theme="dark"] .pg-modal-header {
+    background: var(--vz-primary);
+    color: #ffffff;
+}
+
+/* Icon Wrapper - Icon container trong header */
+[data-bs-theme="dark"] .pg-icon-wrapper {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* Title và Subtitle - Typography trong header */
+[data-bs-theme="dark"] .pg-title {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pg-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Modal Body - Nền của body trong dark mode */
+[data-bs-theme="dark"] .pg-modal-body {
+    background: #212529;
+}
+
+/* Loader Text - Text trong loading state */
+[data-bs-theme="dark"] .pg-loader-text {
+    color: #adb5bd;
+}
+
+/* Spinner - Loading spinner border */
+[data-bs-theme="dark"] .pg-spinner-inner {
+    border-color: #495057;
+    border-top-color: var(--vz-primary);
+}
+
+/* Gateway Cards - Các card cổng thanh toán */
+[data-bs-theme="dark"] .pg-gateway-card {
+    background: #2b3035;
+    border-color: #404449;
+}
+
+[data-bs-theme="dark"] .pg-gateway-card:hover {
+    border-color: var(--vz-primary);
+    background: #343a40;
+    box-shadow: 0 12px 24px rgba(var(--vz-primary-rgb), 0.2);
+}
+
+/* Gateway Info - Text trong card */
+[data-bs-theme="dark"] .pg-gateway-name {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pg-gateway-desc {
+    color: #adb5bd;
+}
+
+/* Gateway Arrow - Mũi tên trong card */
+[data-bs-theme="dark"] .pg-gateway-arrow {
+    color: #6c757d;
+}
+
+[data-bs-theme="dark"] .pg-gateway-card:hover .pg-gateway-arrow {
+    color: var(--vz-primary);
+}
+
+/* Error State - Trạng thái lỗi */
+[data-bs-theme="dark"] .pg-error-icon {
+    background: #dc3545;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pg-error-title {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pg-error-text {
+    color: #adb5bd;
+}
+
+/* Empty State - Trạng thái trống */
+[data-bs-theme="dark"] .pg-empty-icon {
+    background: linear-gradient(135deg, #495057, #6c757d);
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .pg-empty-title {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pg-empty-text {
+    color: #adb5bd;
+}
+
+/* Close Button - Nút đóng modal trong dark mode */
+[data-bs-theme="dark"] .pg-modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
