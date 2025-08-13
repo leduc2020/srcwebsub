@@ -976,7 +976,7 @@ INSERT INTO `settings` (`id`, `name`, `value`) VALUES
 (3, 'title', 'SMM Panel Giá Rẻ - Tăng Like, Follow, View Tự Động Nhanh Chóng'),
 (4, 'description', 'Mua dịch vụ mạng xã hội tự động với SMM Panel giá rẻ: Tăng like, follow, view YouTube, TikTok, Instagram, Facebook,... Nạp tiền nhanh, hỗ trợ 24/7, API cho reseller.'),
 (5, 'keywords', ''),
-(6, 'author', 'KHANGAPI.COM'),
+(6, 'author', 'thuylinhsub.click'),
 (7, 'timezone', 'Asia/Ho_Chi_Minh'),
 (8, 'email', 'xxxx@gmail.xom'),
 (9, 'status', '1'),
